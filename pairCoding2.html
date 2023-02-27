@@ -26,6 +26,7 @@
       align-items: center;
       
       position: relative;
+      transition: background-color 0.2s ease-in;
     }
     #root > div{
       width: 500px;
@@ -84,14 +85,76 @@
   <script>
     let root = document.getElementById('root');
     console.log(root);
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) { // 지정된 값만큼 div를 만들어주는 반복문 생성 - 이세민
       let createDiv = document.createElement('div');
       createDiv.textContent = i + "번째 div";
       root.appendChild(createDiv);
     }
     
-    let rootChilds = root.children;
-    console.log(rootChilds.length);
+    let rootChilds = root.children; // root의 자식들을 rootChilds로 선언
+    console.log(rootChilds.length); // 이후 length로 길이 파악. root.children[값]으로 간편하게 찾아낼 수 있게 됨.
+
+
+    let firstChild = root.children[0];
+    //firstChild = document.querySelector('div')[0].style.backgroundColor = 'salmon';
+    /*firstChild = {
+      bg_color : "salmon",
+      m_top : 300,
+      m_left : 300,
+      flt : blur(20)
+    }*/
+    firstChild = ["salmon", 300, 300, blur(20)];
+
+    let secondChild = root.children[1];
+    /*secondChild = {
+      bg_color : "cornflowerblue",
+      m_top : 50,
+      m_left : -50,
+      flt : blur(20)
+    }*/
+    secondChild = ["cornflowerblue", 50, -50, blur(20)];
+    
+  
+    let thirdchild = root.children[2]; // (제로베이스 상으로) 2번째 div 찾아서 변수 선언해줌. 
+    /*thirdchild = {
+      bg_color : "coral",
+      m_top : -100,
+      m_left : 50,
+      flt : blur(10)
+    }*/
+    thirdChild = ["coral", -100, 50, blur(10)];
+
+
+    //document.write(firstChild);
+    //document.write(secondChild);
+    //document.write(thirdChild);
+
+
+    
+    function divDesign(a,b,c,d){
+      children = {
+        bg_color : document.querySelectorAll('div'),
+      }
+
+    }
+
+
+    thirdchild.addEventListener("click", function() { // 해당 div를 클릭할 때마다 이벤트 발생하도록 함수 선언
+      let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16); // 문자열 # 생상 + 0~1677215를 랜덤으로 입력받아 16진수로 변환한 값 붙임 = 랜덤 컬러값
+      root.style.backgroundColor = randomColor; // 이후 생성된 컬러값을 root.style.background에 넣어줌
+    });
+
+    // root.addEventListener("click", function() {
+    //   root.innerHTML = weekend[counter] + "은 쉽니다."; // root에 html 생성해서 어떤 배열, 어떤 변수를 숫자로 할당함
+    //   let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    //   root.style.backgroundColor = randomColor;
+    //   counter = counter + 1; 
+    //   if(counter >= weekend.length) { // 만약 counter 값이 weekend 배열의 길이보다 같거나 커진다면 counter 값을 0으로 재할당.
+    //     counter = 0;
+    //   }
+    //   console.log(counter);
+    // });
+
 
   </script>
 </body>
