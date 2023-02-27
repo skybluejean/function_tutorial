@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+<body>
+<div id="root">
+
+</div>
+<script>
+
+
+  function dataFunc(a,b,c,d){
+    let obj = {
+    parent : document.querySelector(a),
+    children : document.createElement(b),
+    grandChildren : document.createElement(c),
+    grandChildrenText : d
+  }
+  return obj;
+}
+
+let tagArray = ["div", "footer", "section"]
+//함수로 호출되어서 객체값으로 리턴된 것
+let dataForm = dataFunc("#root", tagArray[1], "li", "hello");
+  
+
+
+  let root = dataForm.parent;
+  console.dir(root);
+  let aa = dataForm.children;
+  root.appendChild(aa);
+  let bb = dataForm.grandChildren;
+  root.appendChild(bb);
+  bb.textContent = dataForm.grandChildrenText;
+
+
+  /*
+  let root = document.querySelector('#root');
+  console.dir(root);
+  let aa = document.createElement('ul');
+  root.appendChild(aa);
+
+  let bb = document.createElement('li');
+  aa.appendChild(bb);
+  bb.textContent = "hello"
+  */
+  
+  //root.children[0] = "hello"
+</script>  
+</body>
+</html>
