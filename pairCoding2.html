@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    *{
+      margin : 0;
+      padding : 0;
+      box-sizing : border-box;
+    }
+    
+    #root{
+      /* width: 100vw;
+      height: 100vh; */
+      background-color: cadetblue;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      position: relative;
+    }
+    #root > div{
+      width: 500px;
+      height: 500px;
+      border-radius: 50px;
+      opacity: 0.8;
+      position: absolute;
+    }
+    
+    
+    
+    
+    
+    #root > div:nth-child(1) {
+      
+      margin-top: 300px;
+      margin-left: 300px;
+      background-color: salmon;
+      filter:blur(20px);
+      
+    }
+
+    #root > div:nth-child(2) {
+      
+      margin-top: 50px;
+      margin-left: -50px;
+      background-color: cornflowerblue;
+      filter:blur(20px);
+      
+    }
+    
+    
+    
+    #root > div:nth-child(3) {
+      
+      margin-top: -100px;
+      margin-left: 50px;
+      background-color: coral;
+      filter:blur(0px);
+      
+    }
+
+    
+  </style>
+
+
+</head>
+
+
+
+
+
+<body>
+  <div id="root">
+  </div>
+
+
+
+  <script>
+    let root = document.getElementById('root');
+    for (let i = 0; i < 3; i++) {
+      let createDiv = document.createElement('div');
+      root.appendChild(createDiv) + "번째 div입니다."
+    }
+
+    
+
+    let rootChilds = root.children;
+    console.log(rootChilds.length);
+    let thirdDiv = root.children[2];
+    thirdDiv.style.width = '150px';
+    thirdDiv.style.height = '150px';
+
+
+  </script>
+</body>
+</html>

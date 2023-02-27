@@ -13,12 +13,10 @@
       padding : 0;
       box-sizing : border-box;
     }
-    body{
-      overflow-x : hidden;
-    }
+    
     #root{
-      width: 100vw;
-      height: 100vh;
+      /* width: 100vw;
+      height: 100vh; */
       background-color: cadetblue;
       
       display: flex;
@@ -80,17 +78,11 @@
 
 <body>
   <div id="root">
-    <div id="container"></div>
   </div>
 
 
 
   <script>
-
-   // body.style.margin = 0;
-  //body.style.padding = 0;
-
-
     let root = document.getElementById('root');
     let divadd = 2; // 만들고 싶은 div 개수 입력하기. - 이세민
     for(let i=0; i<=divadd; i++){ 
@@ -98,21 +90,77 @@
       root.appendChild(createDiv);
     }
 
+    /*
+    let ch1 = document.createElement('div');
+    //root = document.appendChild(ch1);
 
-    root.parentElement.style.overflowX="hidden";
-  
+    let ch2 = document.createElement('div');
+    let ch3 = document.createElement('div');
 
-    document.body.style.margin = 0;
-    window.getComputedStyle(document.body).margin=0;
+    root = document.appendChild(ch1);
+    root = document.appendChild(ch2);
+    root = document.appendChild(ch3);
+    */
     
 
-    let proto = document.getElementsByTagName("*");
-    for (let test = 0; test < proto.length; test++) {
-      proto.children[test].style.margin=0;
-      let element = proto[test];
-    }
+    // body.style.margin = 0;
+    //body.style.padding = 0;
+    // let object = document.querySelector('*');
+    //object.style.margin = 0;
+    
+    
+    
 
-  console.dir(root)
+
+
+    root.parentElement.style.overflowX="hidden";
+
+
+
+
+    
+
+    function divStyle(a,b,c,d){
+      let margin_top = document.getElementById('a').style.marginTop;
+      let margin_left = document.getElementById('b').style.marginleft;
+      let background_color = document.getElementById('c').style.backgroundColor;
+      let filter = document.getElementById('d').style.filter;
+    }
+  
+    let div1 = document.querySelector(createDiv)[0];
+    div1 = divStyle(300,200,"salmon","blur");
+
+    let div2 = document.querySelector(createDiv)[1];
+    div2 = divStyle(50,-50,"cornflowerblue","blur");
+
+    let div3 = document.querySelector(createDiv)[2];
+    div3 = divStyle(-100,50,"coral","blur");
+
+
+
+    //document.body.style.margin = 0;
+    //window.getComputedStyle(document.body).margin=0;
+    
+
+    // 전체 스타일 적용
+    // let proto = document.getElementsByTagName("*");
+    // for (let test = 0; test < proto.length; test++) {
+    //   let protoStyle = proto[test].style
+    //   protoStyle.margin = 0;
+    //   protoStyle.padding = 0;
+    //   protoStyle.boxSizing="border-box";
+    // }
+
+
+    // let proto2 = document.getElementsByTagName("*");
+    // for (let inde = 0; inde < proto2.length; i++) {
+    //   let element2 = proto2[inde];
+    // }
+    
+      console.dir(root);
+      //const all = document.querySelector('*');
+
+
   </script>
 </body>
 </html>
