@@ -80,10 +80,39 @@
 
 <body>
   <div id="root">
-    <div></div>
-    <div></div>
-    <div></div>
+    <div id="container"></div>
   </div>
 
+
+
+  <script>
+
+   // body.style.margin = 0;
+  //body.style.padding = 0;
+
+
+    let root = document.getElementById('root');
+    let divadd = 2; // 만들고 싶은 div 개수 입력하기. - 이세민
+    for(let i=0; i<=divadd; i++){ 
+      let createDiv = document.createElement('div');
+      root.appendChild(createDiv);
+    }
+
+
+    root.parentElement.style.overflowX="hidden";
+  
+
+    document.body.style.margin = 0;
+    window.getComputedStyle(document.body).margin=0;
+    
+
+    let proto = document.getElementsByTagName("*");
+    for (let test = 0; test < proto.length; test++) {
+      proto.children[test].style.margin=0;
+      let element = proto[test];
+    }
+
+  console.dir(root)
+  </script>
 </body>
 </html>
